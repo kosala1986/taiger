@@ -17,12 +17,14 @@ export class ProjectListComponent implements OnInit {
 
   constructor(private baseService: BaseService, private formBuilder: FormBuilder, private router: Router) { }
 
+  //Create reactive form when component initiates and call GitHub to load user's repositories
   ngOnInit() {
     this.gitHubForm = this.formBuilder.group({
       userName: ['', Validators.required]
     });
   }
 
+  //Call GitHub to load user's repositories
   getProjectList(userName: string): void {
     let user: string = `users/${userName}/repos`;
     this.baseService.get(user).subscribe((data) => {

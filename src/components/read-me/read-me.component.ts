@@ -16,6 +16,7 @@ export class ReadMeComponent implements OnInit {
 
   constructor(private activeRoute: ActivatedRoute, private baseService: BaseService, private router: Router) { }
 
+  //Load the readme file when component initiates 
   ngOnInit() {
 
     this.activeRoute.queryParams.subscribe(queryParams => {
@@ -29,7 +30,7 @@ export class ReadMeComponent implements OnInit {
       }
     });
   }
-  
+
   getReadMeContent(): void {
     let user: string = `repos/${this.userName}/${this.repoName}/readme`;
     this.baseService.get(user).subscribe((data) => {
