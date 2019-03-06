@@ -1,8 +1,12 @@
-.read-me-container {
-    margin-top: 50px;
+@mixin flex($direction, $justifyContent) {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+  }
+
+.read-me-container {
+    @include flex(column, center);
+    margin-top: 50px;
     margin-left: 5%;
     margin-right: 5%;
 
