@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BaseService } from '../../services/base.service';
+import * as marked from 'marked';
 
 @Component({
   selector: 'app-read-me',
@@ -28,11 +29,11 @@ export class ReadMeComponent implements OnInit {
       }
     });
   }
-
+  
   getReadMeContent(): void {
     let user: string = `repos/${this.userName}/${this.repoName}/readme`;
     this.baseService.get(user).subscribe((data) => {
-      this.HTMLContent = atob(data.content);
+      this.HTMLContent = marked(atob(data.content));
 
     }, err => this.router.navigate(['/']));
   }
