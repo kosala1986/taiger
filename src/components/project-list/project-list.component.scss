@@ -9,7 +9,7 @@
     padding: 50px 0px 0px 0px;
     margin: auto;
     width: 50%;
-    
+
     .selection-container {
         .hub-form{
             @include flex(row, center);
@@ -35,5 +35,10 @@
 
     .list-container {
         padding: 20px 0px 20px 0px;
+        ul {
+            li {
+                padding: 5px 0px 5px 0px;
+            }
+        }
     }
 }
