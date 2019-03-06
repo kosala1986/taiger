@@ -1,0 +1,37 @@
+.project-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0px 0px 0px;
+    margin: auto;
+    width: 50%;
+
+
+    .selection-container {
+        .hub-form{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            .title {
+                width: 20%;
+            }
+
+            .input-wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                width: 80%;
+                text-align: left;
+
+                .input-box {
+                    padding: 0px 10px 0px 10px;
+                    input {
+                        width: 200px;
+                    }
+                }
+              
+            }
+        }
+    }
+}

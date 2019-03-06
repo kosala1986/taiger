@@ -1,0 +1,24 @@
+<div class="project-list-container">
+  <div class="selection-container">
+    <form [formGroup]="gitHubForm" class="hub-form" (ngSubmit)="onSubmit()">
+        <div class="title">
+          <span>GitHub Name:</span>
+        </div>
+        <div class="input-wrapper">
+          <div class="input-box">
+              <input type="text" formControlName="userName" class="form-control"  placeholder="Enter user name" />
+          </div>
+          <div class="btn-wrapper">
+              <button class="btn btn-primary" type="submit">Projects</button>
+          </div>
+        </div>
+    </form>
+  </div>
+  <div class="list-container">
+      <ul *ngIf="showList()">
+          <li *ngFor="let project of projectList">
+            <a href="javascript:void(0);" (click)="viewFile($event, project.name)">{{ project.name }}</a>
+          </li>
+        </ul>
+  </div>
+</div>
